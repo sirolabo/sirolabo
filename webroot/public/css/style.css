@@ -1,0 +1,230 @@
+html {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Times New Roman", "游明朝", YuMincho, "Hiragino Mincho ProN", Meiryo, serif;
+}
+a:hover {
+  text-decoration: none;
+}
+#transition {
+  width: 100%;
+  height: 100%;
+}
+#contents {
+  min-height: 100%;
+  height: auto !important;
+}
+footer .footeLinkArea {
+  margin-bottom: 10px;
+}
+footer .footeLinkArea .name {
+  border-bottom: double 1px #777;
+  margin-bottom: 5px;
+}
+footer .footer {
+  height: 50px;
+  margin-top: 20px;
+}
+footer #copyright {
+  text-align: center;
+}
+#loading {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#loading #load_count {
+  font-size: 25px;
+  text-align: center;
+}
+#loading #loadingImg {
+  display: block;
+  margin: 15% auto auto auto;
+  width: 100px;
+  height: 100px;
+}
+.tooltip-inner {
+  white-space: pre;
+  max-width: none;
+}
+.glyphicon {
+  margin-right: icon-padding-right px;
+}
+.fa {
+  margin-right: icon-padding-right px;
+}
+.box_accordion .trigger {
+  display: block;
+}
+.box_accordion .contents {
+  display: none;
+}
+#debugGameToolArea {
+  top: 100px;
+  z-index: 1000;
+  position: fixed;
+}
+#debugGameToolArea #layerEditor {
+  top: 200px;
+}
+#debugGameToolArea #objEditor {
+  top: 230px;
+}
+.game {
+  position: absolute;
+}
+.game input {
+  color: #000;
+}
+.game table {
+  text-align: left;
+}
+.game .slider {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 200px;
+  display: inline-block;
+}
+@media screen and (min-width: 0px) {
+  [data-webele="debugGameToolArea_icon"] {
+    background-color: #000;
+    color: #ea0000;
+    position: fixed;
+    width: 30px;
+  }
+}
+@media screen and (min-width: 0px) {
+  [data-webele="editor_header"] {
+    background-color: #000;
+    color: #fff;
+    min-width: 200px;
+    min-height: 30px;
+    padding-left: 33px;
+    padding-top: 2px;
+  }
+}
+@media screen and (min-width: 0px) {
+  [data-webele="editor_setterArea"] {
+    background-color: #404040;
+    border-left: solid 1px #000;
+    border-top: solid 1px #000;
+    border-right: solid 1px #000;
+    border-bottom: solid 1px #000;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    text-shadow: px 0px 0px #000, 0px 0px 0px, 0px 0px 0px, 0px 0px 0px;
+  }
+}
+@media screen and (min-width: 0px) {
+  [data-webele="setterContents"] {
+    background-color: #bfbfbf;
+    font-size: 14px;
+    font-weight: 100;
+    color: #000;
+    text-shadow: px px 0px, 0px 0px 0px, 0px 0px 0px, 0px 0px 0px;
+    white-space: nowrap;
+    width: auto;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+  }
+}
+#webCustomizerArea {
+  top: 100px;
+  z-index: 1000;
+  position: fixed;
+}
+#webCustomizerArea #dataChanger {
+  top: 200px;
+}
+#webCustomizerArea #optionChanger {
+  top: 230px;
+}
+#webCustomizerArea #colorSchemeChanger {
+  top: 260px;
+}
+#webCustomizerArea #cssChanger {
+  top: 290px;
+}
+.webCustomizer {
+  position: absolute;
+  z-index: 1000;
+}
+.webCustomizer table {
+  text-align: left;
+}
+.webCustomizer .fixed {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  position: fixed;
+}
+.webCustomizer .fixed i {
+  width: 30px;
+  color: #f00;
+}
+.webCustomizer .contents .headerArea {
+  height: 50px;
+  width: auto;
+  background-color: #000;
+  color: #fff;
+  z-index: 1001;
+  text-align: left;
+  padding-left: 35px;
+}
+.webCustomizer .contents .headerArea .headerFunction {
+  min-width: 380px;
+}
+.webCustomizer .contents .headerArea input,
+.webCustomizer .contents .headerArea select {
+  color: #000;
+}
+.webCustomizer .contents .inline {
+  display: inline;
+}
+.webCustomizer .contents .displayNone {
+  display: none;
+}
+.webCustomizer .contents .contentsArea {
+  text-align: center;
+  max-width: 1000px;
+  min-width: 100px;
+  width: auto;
+  white-space: nowrap;
+  max-height: 400px;
+  overflow-y: scroll;
+  background-color: #ccc;
+}
+.webCustomizer .contents .contentsArea .css {
+  min-width: 400px;
+}
+.webCustomizer .contents .contentsArea .setterArea {
+  border: solid 1px #000;
+}
+.webCustomizer .contents .contentsArea .setterArea .trigger {
+  color: #fff;
+  font-size: 17px;
+  background-color: #333;
+}
+.webCustomizer .contents .contentsArea .setterArea .contents {
+  padding: 10px;
+  color: #000;
+  background-color: #ccc;
+}
+.webCustomizer .contents .contentsArea .setterArea .contents .sub {
+  color: #f00;
+}
+.webCustomizer .contents .contentsArea .setterArea .contents .slider {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 200px;
+  display: inline-block;
+}

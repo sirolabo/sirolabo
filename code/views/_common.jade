@@ -1,0 +1,35 @@
+extends extends/_standard
+//-============================================================================
+//- header
+//-============================================================================
+block header
+  +bootstrap_nav("headerNav", nav.common, "header", path.img + "common/logo.png")
+
+//-============================================================================
+//- footer
+//-============================================================================
+//-----------------------------------------------------------------------------
+//- main
+//-----------------------------------------------------------------------------
+block footer
+  .container
+    .row
+      .col-sm-10
+        .col-sm-3
+          +footerLink("Pages", nav.common)
+        .col-sm-3
+          +footerLink("test", nav.common)
+                  
+      .col-sm-2
+        .socialArea
+          a(href="#")
+            +icon("fontAwesome", "twitter-square", "fa-2x")
+          a(href="#")
+            +icon("fontAwesome", "facebook-square", "fa-2x")
+          a(href="#")
+            +icon("fontAwesome", "tumblr-square", "fa-2x")
+        .backButtonArea
+          a(href="#")
+            +icon("fontAwesome", "arrow-circle-up", "fa-5x")
+          
+  p#copyright=text.copyRight

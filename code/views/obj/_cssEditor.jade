@@ -1,0 +1,2668 @@
+mixin setterArea(id)
+	div(id=id+"Setter" class="setterArea box_accordion")
+		div(class="trigger")=id
+		div(class="contents")
+			table
+				tr
+					td="trigger"
+					td
+						select(id="animation_trigger-selectBox" class=" select")
+							option(value="")
+							option(value="hover")="hover"
+							option(value="active")="active"
+							option(value="target")="target"
+							option(value="focus")="focus"
+							option(value="checkd")="checkd"
+				tr
+					td="time"
+					td
+						div(id="animation_time-slider" class=" slider")
+						input(id="animation_time-slider_input" class=" sliderInput" type="text" size="4" value="")
+
+#webCustomizerArea
+	div(id="cssChanger" class="webCustomizer box_accordion draggable")
+		div(class="trigger fixed")
+			i(id="cssChangerIcon" class="fa-2x fa fa-edit")
+		div(class="contents")
+			div(class="headerArea")
+				div(class="headerFunction")
+					span="element"
+					input(id="webeleName_input" class="webeleName" type="text" size="10" value="none")
+					span="anime"
+					select(id="animationState_select" class=" select")
+						option(value="start")="start"
+						option(value="end")="end"
+					span="all"
+					input(id="animAll_checked" class="" type="checkbox")
+				div(class="headerFunction")
+					span="responsive"
+					input(id="responsive_input" class="" type="text" size="7" value="exSmall")
+					span="all"
+					input(id="resAll_checked" class="" type="checkbox" checked="true")
+					span="max"
+					select(id="responsiveMax_select" class=" select")
+						option(value="exSmall")="exSmall"
+						option(value="small")="small"
+						option(value="middle")="middle"
+						option(value="large")="large"
+
+			div(class="contentsArea css")
+				+setterArea("animation")
+
+//- 			div(id="animationSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")="animation"
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							td="trigger"
+//- 							td
+//- 								select(id="animation_trigger-selectBox" class=" select")
+//- 									option(value="")
+//- 									option(value="hover")="hover"
+//- 									option(value="active")="active"
+//- 									option(value="target")="target"
+//- 									option(value="focus")="focus"
+//- 									option(value="checkd")="checkd"
+//- 						tr
+//- 							td="time"
+//- 							td
+//- 								div(id="animation_time-slider" class=" slider")
+//- 								input(id="animation_time-slider_input" class=" sliderInput" type="text" size="4" value="")
+			
+//- 			div(id="backgroundSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")="background"
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							td="color"
+//- 							td
+//- 								select(id="background_color_colorName-selectBox" class=" select")
+//- 									option(value="")
+//- 									option(value="base")="base"
+//- 									option(value="baseSecond")="baseSecond"
+//- 									option(value="baseThird")baseThird
+//- 									option(value="reverse")reverse
+//- 									option(value="reverseSecond")reverseSecond
+//- 									option(value="reverseThird")reverseThird
+//- 									option(value="sepia")sepia
+//- 									option(value="black")black
+//- 									option(value="white")white
+//- 									option(value="blue")blue
+//- 									option(value="mono")mono
+//- 									option(value="reverseMono")reverseMono
+								
+//- 								select(id="background_color_tone-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="normal")normal
+									
+//- 									option(value="dim")dim
+									
+//- 									option(value="dark")dark
+									
+//- 									option(value="moreDark")moreDark
+									
+//- 									option(value="light")light
+									
+//- 									option(value="moreLight")moreLight
+									
+//- 									option(value="webSafe")webSafe
+									
+								
+							
+						
+//- 						tr
+//- 							tdimage
+							
+//- 							td
+//- 								select(id="background_image-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="none.png")none.png
+									
+//- 									option(value="bg1.png")bg1.png
+									
+//- 									option(value="bg2.png")bg2.png
+									
+//- 									option(value="contents.png")contents.png
+									
+//- 									option(value="button.png")button.png
+									
+//- 									option(value="char_A.jpg")char_A.jpg
+									
+//- 									option(value="char_B.jpg")char_B.jpg
+									
+//- 									option(value="gallery.jpg")gallery.jpg
+									
+//- 									option(value="h_char.jpg")h_char.jpg
+									
+//- 									option(value="h_dl.jpg")h_dl.jpg
+									
+//- 									option(value="h_garallery.jpg")h_garallery.jpg
+									
+//- 									option(value="h_story.jpg")h_story.jpg
+									
+//- 									option(value="main.jpg")main.jpg
+									
+//- 									option(value="room.jpg")room.jpg
+									
+//- 									option(value="story.jpg")story.jpg
+									
+								
+							
+						
+//- 						tr
+//- 							tdrepeat
+							
+//- 							td
+//- 								select(id="background_repeat-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="repeat")repeat
+									
+//- 									option(value="repeat-x")repeat-x
+									
+//- 									option(value="repeat-y")repeat-y
+									
+//- 									option(value="no-repeat")no-repeat
+									
+								
+							
+						
+//- 						tr
+//- 							tdattachment
+							
+//- 							td
+//- 								select(id="background_attachment-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="scroll")scroll
+									
+//- 									option(value="fixed")fixed
+									
+								
+							
+						
+//- 						tr
+//- 							tdgrdDirection
+							
+//- 							td
+//- 								select(id="background_grdDirection-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="left")left
+									
+//- 									option(value="left top")left top
+									
+//- 									option(value="left bottom")left bottom
+									
+//- 									option(value="right")right
+									
+//- 									option(value="right top")right top
+									
+//- 									option(value="right bottom")right bottom
+									
+//- 									option(value="top")top
+									
+//- 									option(value="bottom")bottom
+									
+//- 									option(value="circle")circle
+									
+								
+							
+						
+//- 						tr
+//- 							tdgrdPercent
+							
+//- 							td
+//- 								div(id="background_grdPercent-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="background_grdPercent-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						td(class="sub" colspan="3")grdColor
+//- 							tr
+//- 								td1
+								
+//- 								td
+//- 									select(id="background_grdColor_1_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="background_grdColor_1_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+//- 							tr
+//- 								td="2"
+								
+//- 								td
+//- 									select(id="background_grdColor_2_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="background_grdColor_2_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+//- 							tr
+//- 								td3
+								
+//- 								td
+//- 									select(id="background_grdColor_3_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="background_grdColor_3_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")size
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									div(id="background_size_x_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="background_size_x_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="background_size_x_unit-selectBox" class=" select")
+//- 										option(value="auto")auto
+										
+//- 										option(value="contain")contain
+										
+//- 										option(value="cover")cover
+										
+//- 										option(value="px")px
+										
+//- 										option(value="%")%
+										
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									div(id="background_size_y_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="background_size_y_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="background_size_y_unit-selectBox" class=" select")
+//- 										option(value="auto")auto
+										
+//- 										option(value="contain")contain
+										
+//- 										option(value="cover")cover
+										
+//- 										option(value="px")px
+										
+//- 										option(value="%")%
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")coord
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									div(id="background_coord_x_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="background_coord_x_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="background_coord_x_unit-selectBox" class=" select")
+//- 										option(value="auto")auto
+										
+//- 										option(value="px")px
+										
+//- 										option(value="%")%
+										
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									div(id="background_coord_y_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="background_coord_y_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="background_coord_y_unit-selectBox" class=" select")
+//- 										option(value="auto")auto
+										
+//- 										option(value="px")px
+										
+//- 										option(value="%")%
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")direction
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									select(id="background_direction_x-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="left")left
+										
+//- 										option(value="right")right
+										
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									select(id="background_direction_y-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="top")top
+										
+//- 										option(value="bottom")bottom
+										
+									
+								
+							
+						
+					
+				
+			
+//- 			div(id="borderSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")border
+				
+//- 				div(class="contents")
+//- 					table
+//- 						td(class="sub" colspan="3")all
+//- 							tr
+//- 								tdwidth
+								
+//- 								td
+//- 									div(id="border_all_width-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="border_all_width-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdstyle
+								
+//- 								td
+//- 									select(id="border_all_style-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="none")none
+										
+//- 										option(value="hidden")hidden
+										
+//- 										option(value="solid")solid
+										
+//- 										option(value="double")double
+										
+//- 										option(value="groove")groove
+										
+//- 										option(value="ridge")ridge
+										
+//- 										option(value="inset")inset
+										
+//- 										option(value="outset")outset
+										
+//- 										option(value="dashed")dashed
+										
+//- 										option(value="dotted")dotted
+										
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="border_all_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="border_all_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")left
+//- 							tr
+//- 								tdwidth
+								
+//- 								td
+//- 									div(id="border_left_width-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="border_left_width-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdstyle
+								
+//- 								td
+//- 									select(id="border_left_style-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="none")none
+										
+//- 										option(value="hidden")hidden
+										
+//- 										option(value="solid")solid
+										
+//- 										option(value="double")double
+										
+//- 										option(value="groove")groove
+										
+//- 										option(value="ridge")ridge
+										
+//- 										option(value="inset")inset
+										
+//- 										option(value="outset")outset
+										
+//- 										option(value="dashed")dashed
+										
+//- 										option(value="dotted")dotted
+										
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="border_left_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="border_left_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")top
+//- 							tr
+//- 								tdwidth
+								
+//- 								td
+//- 									div(id="border_top_width-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="border_top_width-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdstyle
+								
+//- 								td
+//- 									select(id="border_top_style-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="none")none
+										
+//- 										option(value="hidden")hidden
+										
+//- 										option(value="solid")solid
+										
+//- 										option(value="double")double
+										
+//- 										option(value="groove")groove
+										
+//- 										option(value="ridge")ridge
+										
+//- 										option(value="inset")inset
+										
+//- 										option(value="outset")outset
+										
+//- 										option(value="dashed")dashed
+										
+//- 										option(value="dotted")dotted
+										
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="border_top_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="border_top_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")right
+//- 							tr
+//- 								tdwidth
+								
+//- 								td
+//- 									div(id="border_right_width-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="border_right_width-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdstyle
+								
+//- 								td
+//- 									select(id="border_right_style-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="none")none
+										
+//- 										option(value="hidden")hidden
+										
+//- 										option(value="solid")solid
+										
+//- 										option(value="double")double
+										
+//- 										option(value="groove")groove
+										
+//- 										option(value="ridge")ridge
+										
+//- 										option(value="inset")inset
+										
+//- 										option(value="outset")outset
+										
+//- 										option(value="dashed")dashed
+										
+//- 										option(value="dotted")dotted
+										
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="border_right_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="border_right_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")bottom
+//- 							tr
+//- 								tdwidth
+								
+//- 								td
+//- 									div(id="border_bottom_width-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="border_bottom_width-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdstyle
+								
+//- 								td
+//- 									select(id="border_bottom_style-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="none")none
+										
+//- 										option(value="hidden")hidden
+										
+//- 										option(value="solid")solid
+										
+//- 										option(value="double")double
+										
+//- 										option(value="groove")groove
+										
+//- 										option(value="ridge")ridge
+										
+//- 										option(value="inset")inset
+										
+//- 										option(value="outset")outset
+										
+//- 										option(value="dashed")dashed
+										
+//- 										option(value="dotted")dotted
+										
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="border_bottom_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="border_bottom_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+					
+				
+			
+//- 			div(id="borderRadiusSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")borderRadius
+				
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							tdall
+							
+//- 							td
+//- 								div(id="borderRadius_all-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="borderRadius_all-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdtopLeft
+							
+//- 							td
+//- 								div(id="borderRadius_topLeft-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="borderRadius_topLeft-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdtopRight
+							
+//- 							td
+//- 								div(id="borderRadius_topRight-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="borderRadius_topRight-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdbottomLeft
+							
+//- 							td
+//- 								div(id="borderRadius_bottomLeft-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="borderRadius_bottomLeft-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdbottomRight
+							
+//- 							td
+//- 								div(id="borderRadius_bottomRight-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="borderRadius_bottomRight-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+					
+				
+			
+//- 			div(id="fontSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")font
+				
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							tdfamily
+							
+//- 							td
+//- 								select(id="font_family-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="Andale Mono")Andale Mono
+									
+//- 									option(value="Arial")Arial
+									
+//- 									option(value="Arial Black")Arial Black
+									
+//- 									option(value="Comic Sans MS")Comic Sans MS
+									
+//- 									option(value="Courier")Courier
+									
+//- 									option(value="FixedSys")FixedSys
+									
+//- 									option(value="Georgia")Georgia
+									
+//- 									option(value="Helvetica")Helvetica
+									
+//- 									option(value="Impact")Impact
+									
+//- 									option(value="Lucida")Lucida
+									
+//- 									option(value="ＭＳ Ｐゴシック")ＭＳ Ｐゴシック
+									
+//- 									option(value="ＭＳ Ｐ明朝")ＭＳ Ｐ明朝
+									
+//- 									option(value="ＭＳ ゴシック")ＭＳ ゴシック
+									
+//- 									option(value="ＭＳ 明朝")ＭＳ 明朝
+									
+//- 									option(value="MS UI Gothic")MS UI Gothic
+									
+//- 									option(value="Small Fonts")Small Fonts
+									
+//- 									option(value="Symbol")Symbol
+									
+//- 									option(value="System")System
+									
+//- 									option(value="Terminal")Terminal
+									
+//- 									option(value="Times New Roman")Times New Roman
+									
+//- 									option(value="Trebuchet MS")Trebuchet MS
+									
+//- 									option(value="Verdana")Verdana
+									
+//- 									option(value="Webdings")Webdings
+									
+								
+							
+						
+//- 						tr
+//- 							tdsize
+							
+//- 							td
+//- 								div(id="font_size-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="font_size-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdlineHeight
+							
+//- 							td
+//- 								div(id="font_lineHeight_num-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="font_lineHeight_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+//- 								select(id="font_lineHeight_unit-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="normal")normal
+									
+//- 									option(value="%")%
+									
+//- 									option(value="px")px
+									
+								
+							
+						
+//- 						tr
+//- 							tdweight
+							
+//- 							td
+//- 								div(id="font_weight-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="font_weight-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdalign
+							
+//- 							td
+//- 								select(id="font_align-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="left")left
+									
+//- 									option(value="right")right
+									
+//- 									option(value="center")center
+									
+								
+							
+						
+//- 						tr
+//- 							tddecoration
+							
+//- 							td
+//- 								select(id="font_decoration-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="none")none
+									
+//- 									option(value="underline")underline
+									
+//- 									option(value="overline")overline
+									
+//- 									option(value="line-through")line-through
+									
+//- 									option(value="blink")blink
+									
+								
+							
+						
+//- 						tr
+//- 							tdfontColor
+							
+//- 							td
+//- 								select(id="font_fontColor_colorName-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="base")base
+									
+//- 									option(value="baseSecond")baseSecond
+									
+//- 									option(value="baseThird")baseThird
+									
+//- 									option(value="reverse")reverse
+									
+//- 									option(value="reverseSecond")reverseSecond
+									
+//- 									option(value="reverseThird")reverseThird
+									
+//- 									option(value="sepia")sepia
+									
+//- 									option(value="black")black
+									
+//- 									option(value="white")white
+									
+//- 									option(value="blue")blue
+									
+//- 									option(value="mono")mono
+									
+//- 									option(value="reverseMono")reverseMono
+									
+								
+//- 								select(id="font_fontColor_tone-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="normal")normal
+									
+//- 									option(value="dim")dim
+									
+//- 									option(value="dark")dark
+									
+//- 									option(value="moreDark")moreDark
+									
+//- 									option(value="light")light
+									
+//- 									option(value="moreLight")moreLight
+									
+//- 									option(value="webSafe")webSafe
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")linkColor
+//- 							tr
+//- 								tdnormal
+								
+//- 								td
+//- 									select(id="font_linkColor_normal_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="font_linkColor_normal_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+//- 							tr
+//- 								tdhover
+								
+//- 								td
+//- 									select(id="font_linkColor_hover_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="font_linkColor_hover_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")shadow1
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									div(id="font_shadow1_x-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow1_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									div(id="font_shadow1_y-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow1_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdshade
+								
+//- 								td
+//- 									div(id="font_shadow1_shade-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow1_shade-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="font_shadow1_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="font_shadow1_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")shadow2
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									div(id="font_shadow2_x-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow2_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									div(id="font_shadow2_y-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow2_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdshade
+								
+//- 								td
+//- 									div(id="font_shadow2_shade-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow2_shade-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="font_shadow2_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="font_shadow2_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")shadow3
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									div(id="font_shadow3_x-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow3_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									div(id="font_shadow3_y-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow3_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdshade
+								
+//- 								td
+//- 									div(id="font_shadow3_shade-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow3_shade-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="font_shadow3_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="font_shadow3_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")shadow4
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									div(id="font_shadow4_x-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow4_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									div(id="font_shadow4_y-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow4_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdshade
+								
+//- 								td
+//- 									div(id="font_shadow4_shade-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="font_shadow4_shade-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdcolor
+								
+//- 								td
+//- 									select(id="font_shadow4_color_colorName-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="base")base
+										
+//- 										option(value="baseSecond")baseSecond
+										
+//- 										option(value="baseThird")baseThird
+										
+//- 										option(value="reverse")reverse
+										
+//- 										option(value="reverseSecond")reverseSecond
+										
+//- 										option(value="reverseThird")reverseThird
+										
+//- 										option(value="sepia")sepia
+										
+//- 										option(value="black")black
+										
+//- 										option(value="white")white
+										
+//- 										option(value="blue")blue
+										
+//- 										option(value="mono")mono
+										
+//- 										option(value="reverseMono")reverseMono
+										
+									
+//- 									select(id="font_shadow4_color_tone-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="normal")normal
+										
+//- 										option(value="dim")dim
+										
+//- 										option(value="dark")dark
+										
+//- 										option(value="moreDark")moreDark
+										
+//- 										option(value="light")light
+										
+//- 										option(value="moreLight")moreLight
+										
+//- 										option(value="webSafe")webSafe
+										
+									
+								
+							
+						
+					
+				
+			
+//- 			div(id="opacitySetter" class="setterArea box_accordion")
+//- 				div(class="trigger")opacity
+				
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							tdopacity
+							
+//- 							td
+//- 								div(id="opacity_opacity-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="opacity_opacity-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+					
+				
+			
+//- 			div(id="positionSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")position
+				
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							tdposition
+							
+//- 							td
+//- 								select(id="position_position-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="static")static
+									
+//- 									option(value="absolute")absolute
+									
+//- 									option(value="relative")relative
+									
+//- 									option(value="fixed")fixed
+									
+								
+							
+						
+//- 						tr
+//- 							tddisplay
+							
+//- 							td
+//- 								select(id="position_display-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="inline")inline
+									
+//- 									option(value="block")block
+									
+//- 									option(value="list-item")list-item
+									
+//- 									option(value="run-in")run-in
+									
+//- 									option(value="inline-block")inline-block
+									
+//- 									option(value="table")table
+									
+//- 									option(value="inline-table")inline-table
+									
+//- 									option(value="table-row-group")table-row-group
+									
+//- 									option(value="table-header-group")table-header-group
+									
+//- 									option(value="table-footer-group")table-footer-group
+									
+//- 									option(value="table-row")table-row
+									
+//- 									option(value="table-column-group")table-column-group
+									
+//- 									option(value="table-column")table-column
+									
+//- 									option(value="table-cell")table-cell
+									
+//- 									option(value="table-caption")table-caption
+									
+//- 									option(value="none")none
+									
+//- 									option(value="inherit")inherit
+									
+								
+							
+						
+//- 						tr
+//- 							tdzIndex
+							
+//- 							td
+//- 								div(id="position_zIndex-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="position_zIndex-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdfloat
+							
+//- 							td
+//- 								select(id="position_float-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="left")left
+									
+//- 									option(value="right")right
+									
+								
+							
+						
+//- 						tr
+//- 							tdclear
+							
+//- 							td
+//- 								select(id="position_clear-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="left")left
+									
+//- 									option(value="right")right
+									
+//- 									option(value="both")both
+									
+								
+							
+						
+//- 						tr
+//- 							tdwhiteSpace
+							
+//- 							td
+//- 								select(id="position_whiteSpace-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="normal")normal
+									
+//- 									option(value="nowrap")nowrap
+									
+//- 									option(value="pre")pre
+									
+								
+							
+						
+//- 						tr
+//- 							tdtop
+							
+//- 							td
+//- 								div(id="position_top_num-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="position_top_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+//- 								select(id="position_top_unit-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="auto")auto
+									
+//- 									option(value="px")px
+									
+//- 									option(value="%")%
+									
+								
+							
+						
+//- 						tr
+//- 							tdleft
+							
+//- 							td
+//- 								div(id="position_left_num-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="position_left_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+//- 								select(id="position_left_unit-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="auto")auto
+									
+//- 									option(value="px")px
+									
+//- 									option(value="%")%
+									
+								
+							
+						
+//- 						tr
+//- 							tdbottom
+							
+//- 							td
+//- 								div(id="position_bottom_num-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="position_bottom_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+//- 								select(id="position_bottom_unit-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="auto")auto
+									
+//- 									option(value="px")px
+									
+//- 									option(value="%")%
+									
+								
+							
+						
+//- 						tr
+//- 							tdright
+							
+//- 							td
+//- 								div(id="position_right_num-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="position_right_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+//- 								select(id="position_right_unit-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="auto")auto
+									
+//- 									option(value="px")px
+									
+//- 									option(value="%")%
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")overflow
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									select(id="position_overflow_x-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="visible")visible
+										
+//- 										option(value="scroll")scroll
+										
+//- 										option(value="hidden")hidden
+										
+//- 										option(value="auto")auto
+										
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									select(id="position_overflow_y-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="visible")visible
+										
+//- 										option(value="scroll")scroll
+										
+//- 										option(value="hidden")hidden
+										
+//- 										option(value="auto")auto
+										
+									
+								
+							
+						
+					
+				
+			
+//- 			div(id="boxShadowSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")boxShadow
+				
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							tdx
+							
+//- 							td
+//- 								div(id="boxShadow_x-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="boxShadow_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdy
+							
+//- 							td
+//- 								div(id="boxShadow_y-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="boxShadow_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdshade
+							
+//- 							td
+//- 								div(id="boxShadow_shade-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="boxShadow_shade-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdsize
+							
+//- 							td
+//- 								div(id="boxShadow_size-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="boxShadow_size-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						tr
+//- 							tdcolor
+							
+//- 							td
+//- 								select(id="boxShadow_color_colorName-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="base")base
+									
+//- 									option(value="baseSecond")baseSecond
+									
+//- 									option(value="baseThird")baseThird
+									
+//- 									option(value="reverse")reverse
+									
+//- 									option(value="reverseSecond")reverseSecond
+									
+//- 									option(value="reverseThird")reverseThird
+									
+//- 									option(value="sepia")sepia
+									
+//- 									option(value="black")black
+									
+//- 									option(value="white")white
+									
+//- 									option(value="blue")blue
+									
+//- 									option(value="mono")mono
+									
+//- 									option(value="reverseMono")reverseMono
+									
+								
+//- 								select(id="boxShadow_color_tone-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="normal")normal
+									
+//- 									option(value="dim")dim
+									
+//- 									option(value="dark")dark
+									
+//- 									option(value="moreDark")moreDark
+									
+//- 									option(value="light")light
+									
+//- 									option(value="moreLight")moreLight
+									
+//- 									option(value="webSafe")webSafe
+									
+								
+							
+						
+//- 						tr
+//- 							tdinset
+							
+//- 							td
+//- 								select(id="boxShadow_inset-selectBox" class=" select")
+//- 									option(value="")
+									
+//- 									option(value="inset")inset
+									
+								
+							
+						
+					
+				
+			
+//- 			div(id="sizeSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")size
+				
+//- 				div(class="contents")
+//- 					table
+//- 						td(class="sub" colspan="3")normal
+//- 							tr
+//- 								tdwidth
+								
+//- 								td
+//- 									div(id="size_normal_width_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="size_normal_width_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="size_normal_width_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+//- 										option(value="none")none
+										
+									
+								
+							
+//- 							tr
+//- 								tdheight
+								
+//- 								td
+//- 									div(id="size_normal_height_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="size_normal_height_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="size_normal_height_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+//- 										option(value="none")none
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")max
+//- 							tr
+//- 								tdwidth
+								
+//- 								td
+//- 									div(id="size_max_width_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="size_max_width_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="size_max_width_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+//- 										option(value="none")none
+										
+									
+								
+							
+//- 							tr
+//- 								tdheight
+								
+//- 								td
+//- 									div(id="size_max_height_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="size_max_height_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="size_max_height_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+//- 										option(value="none")none
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")min
+//- 							tr
+//- 								tdwidth
+								
+//- 								td
+//- 									div(id="size_min_width_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="size_min_width_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="size_min_width_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+//- 										option(value="none")none
+										
+									
+								
+							
+//- 							tr
+//- 								tdheight
+								
+//- 								td
+//- 									div(id="size_min_height_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="size_min_height_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="size_min_height_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+//- 										option(value="none")none
+										
+									
+								
+							
+						
+					
+				
+			
+//- 			div(id="spaceSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")space
+				
+//- 				div(class="contents")
+//- 					table
+//- 						td(class="sub" colspan="3")all
+//- 							tr
+//- 								tdmargin
+								
+//- 								td
+//- 									div(id="space_all_margin_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_all_margin_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_all_margin_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+//- 							tr
+//- 								tdpadding
+								
+//- 								td
+//- 									div(id="space_all_padding_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_all_padding_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_all_padding_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")left
+//- 							tr
+//- 								tdmargin
+								
+//- 								td
+//- 									div(id="space_left_margin_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_left_margin_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_left_margin_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+//- 							tr
+//- 								tdpadding
+								
+//- 								td
+//- 									div(id="space_left_padding_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_left_padding_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_left_padding_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")top
+//- 							tr
+//- 								tdmargin
+								
+//- 								td
+//- 									div(id="space_top_margin_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_top_margin_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_top_margin_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+//- 							tr
+//- 								tdpadding
+								
+//- 								td
+//- 									div(id="space_top_padding_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_top_padding_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_top_padding_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")right
+//- 							tr
+//- 								tdmargin
+								
+//- 								td
+//- 									div(id="space_right_margin_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_right_margin_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_right_margin_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+//- 							tr
+//- 								tdpadding
+								
+//- 								td
+//- 									div(id="space_right_padding_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_right_padding_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_right_padding_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")bottom
+//- 							tr
+//- 								tdmargin
+								
+//- 								td
+//- 									div(id="space_bottom_margin_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_bottom_margin_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_bottom_margin_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+//- 							tr
+//- 								tdpadding
+								
+//- 								td
+//- 									div(id="space_bottom_padding_num-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="space_bottom_padding_num-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- 									select(id="space_bottom_padding_unit-selectBox" class=" select")
+//- 										option(value="")
+										
+//- 										option(value="auto")auto
+										
+//- 										option(value="%")%
+										
+//- 										option(value="px")px
+										
+									
+								
+							
+						
+					
+				
+			
+//- 			div(id="transformSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")transform
+				
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							tdscale
+							
+//- 							td
+//- 								div(id="transform_scale-slider" class=" slider")
+								
+//- 								span=
+								
+//- 								input(id="transform_scale-slider_input" class=" sliderInput" type="text" size="4" value="")
+								
+							
+						
+//- 						td(class="sub" colspan="3")rotate
+//- 							tr
+//- 								tdx
+								
+//- 								td
+//- 									div(id="transform_rotate_x-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="transform_rotate_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdy
+								
+//- 								td
+//- 									div(id="transform_rotate_y-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="transform_rotate_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+//- 							tr
+//- 								tdz
+								
+//- 								td
+//- 									div(id="transform_rotate_z-slider" class=" slider")
+									
+//- 									span=
+									
+//- 									input(id="transform_rotate_z-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+								
+							
+						
+//- 						td(class="sub" colspan="3")skew
+//- 							tr
+//- 								td="x"
+//- 								td
+//- 									div(id="transform_skew_x-slider" class=" slider")
+//- 									input(id="transform_skew_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+//- 							tr
+//- 								td="y"
+//- 								td
+//- 									div(id="transform_skew_y-slider" class=" slider")
+//- 									input(id="transform_skew_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+//- 						td(class="sub" colspan="3")translate
+//- 							tr
+//- 								td="x"
+//- 								td
+//- 									div(id="transform_translate_x-slider" class=" slider")
+//- 									input(id="transform_translate_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+//- 							tr
+//- 								td="y"
+//- 								td
+//- 									div(id="transform_translate_y-slider" class=" slider")
+//- 									input(id="transform_translate_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+//- 						td(class="sub" colspan="3")="origin"
+//- 							tr
+//- 								td="x"
+//- 								td
+//- 									div(id="transform_origin_x-slider" class=" slider")
+//- 									input(id="transform_origin_x-slider_input" class=" sliderInput" type="text" size="4" value="")
+//- 							tr
+//- 								td="y"
+//- 								td
+//- 									div(id="transform_origin_y-slider" class=" slider")
+//- 									input(id="transform_origin_y-slider_input" class=" sliderInput" type="text" size="4" value="")
+									
+//- div(id="colorSchemeChanger" class="webCustomizer box_accordion draggable")
+//- 	div(class="trigger fixed")
+//- 		i(id="colorSchemeChangerIcon" class="fa-2x fa fa-tint")
+//- 	div(class="contents")
+//- 		div(class="headerArea")
+//- 		div(class="contentsArea")
+//- 			div(id="colorpicker_webCustomizer")
+//- 			input(id="colorInput_webCustomizer" type="text" value="0:0:0_#000000")
+			
+//- div(id="optionChanger" class="webCustomizer box_accordion draggable")
+//- 	div(class="trigger fixed")
+//- 		i(id="optionChangerIcon" class="fa-2x fa fa-gear")
+//- 	div(class="contents")
+//- 		div(class="headerArea")
+//- 		div(class="contentsArea option")
+//- 			div(id="transSetter" class="setterArea box_accordion")
+//- 				div(class="trigger")trans
+//- 				div(class="contents")
+//- 					table
+//- 						tr
+//- 							tdtime
+//- 							td
+//- 								div(id="trans_time-slider" class=" slider")
+//- 								input(id="trans_time-slider_input" class=" sliderInput" type="text" size="4" value="")
+//- 						tr
+//- 							tdmethod
+//- 							td
+//- 								select(id="trans_method-selectBox" class=" select")
+//- 									option(value="none")="none"
+//- 									option(value="fade")="fade"
+//- 									option(value="ver_blind")="ver_blind"
+//- 									option(value="hor_blind")="hor_blind"
+//- 									option(value="clip")="clip"
+//- 									option(value="drop_up")="drop_up"
+//- 									option(value="drop_down")="drop_down"
+//- 									option(value="drop_left")="drop_left"
+//- 									option(value="drop_right")="drop_right"
+//- 									option(value="ver_slide")="ver_slide"
+//- 									option(value="hor_slide")="hor_slide"
+//- 									option(value="fold")="fold"
+//- 									option(value="puff_on")="puff_on"
+//- 									option(value="puff_off")="puff_off"
+
+//- div(id="dataChanger" class="webCustomizer box_accordion draggable")
+//- 	div(class="trigger fixed")
+//- 		i(id="dataChangerIcon" class="fa-2x fa fa-save")
+//- 	div(class="contents")
+//- 		div(class="headerArea")
+//- 		div(class="contentsArea")
+//- 			div="GlobalChash"
+//- 				button(id="global_save" type="button" href="data:test.txt")="Save"
+//- 				button(id="global_clear" type="button")="Clear"
+//- 			div="PageChash"
+//- 				button(id="page_save" type="button")="Save"
+//- 				button(id="page_clear" type="button")="Clear"
+//- 			div="File"
+//- 				input(id="loader" class="displayNone" type="file")
+//- 				button(id="saveAsFile" type="button")="Save"
+//- 				button(id="loadFromFile" type="button")="Load"
+//- 			div="Code"
+//- 				button(id="generateCodes" type="button")="GenerateCodes"
