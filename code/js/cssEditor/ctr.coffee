@@ -112,28 +112,28 @@ $('#colorInput_webCustomizer').bind 'change', (event) =>
 #----------------------------------------------------------------------------
 $("#page_save").click (event) =>
   data.setCookie()
-  alert("ページストレージに保存しました。")
+  alert("ページキャッシュに保存しました。")
 
 #----------------------------------------------------------------------------
 # pageClear
 #----------------------------------------------------------------------------
 $("#page_clear").click (event) =>
   data.clearCookie()
-  location.reload()
+  alert("ページキャッシュをクリアしました。")
 
 #----------------------------------------------------------------------------
 # g Save
 #----------------------------------------------------------------------------
 $("#global_save").click (event) =>
   data.setCookie_G()
-  alert("グローバルストレージに保存しました。")
+  alert("グローバルキャッシュに保存しました。")
 
 #----------------------------------------------------------------------------
 # g Clear
 #----------------------------------------------------------------------------
 $("#global_clear").click (event) =>
   data.clearCookie_G()
-  location.reload()
+  alert("グローバルキャッシュをクリアしました。")
   
 #----------------------------------------------------------------------------
 # Generate
@@ -146,12 +146,33 @@ $("#generateCodes").click (event) =>
 # save as file
 #----------------------------------------------------------------------------
 $("#saveAsFile").click (event) =>
-   data.saveAsFile()
+   data.saveFile()
 
 #----------------------------------------------------------------------------
 # save as file
 #----------------------------------------------------------------------------
 $("#loadFromFile").click (event) =>
+  console.log("サーバデータをロードします。")
+　 data.loadFile()
+
+$("#commonSave").click (event) =>
+　 data.commonSave()
+  alert("共通データを保存しました。")
+
+$("#commonLoad").click (event) =>
+　 data.commonLoad()
+  alert("共通データをロードしました。")
+
+#----------------------------------------------------------------------------
+# bkSave
+#----------------------------------------------------------------------------
+$("#saveBKFile").click (event) =>
+   data.saveBKFile()
+
+#----------------------------------------------------------------------------
+# save as file
+#----------------------------------------------------------------------------
+$("#loadBKFile").click (event) =>
    $("#loader").click()
 
 #----------------------------------------------------------------------------
@@ -159,13 +180,17 @@ $("#loadFromFile").click (event) =>
 #----------------------------------------------------------------------------
 loadFromFile = (e, parent) =>
   JsonObj = JSON.parse(e.target.result)
+  data.gui_css = JsonObj.gui_css
   data.webele = JsonObj.webele
   data.HSL = JsonObj.HSL
-  data.optionData    = JsonObj.optionData
+  data.gui_option    = JsonObj.gui_option
+  data.optionData = JsonObj.optionData
   data.responsiveMax = JsonObj.responsiveMax
+
   @init()
 
 core.file.registFileAPI("#loader", loadFromFile, this)
+
 
 #==============================================================================
 # setData
@@ -223,7 +248,7 @@ setCSS = () ->
         #bg
         cssData.background.color = getColor(webeleData.background.color)
         if getVal webeleData.background.image.val
-          cssData.background.image = "../../src/img/imageList/" + getVal webeleData.background.image.val
+          cssData.background.image = "../img/imageList/" + getVal webeleData.background.image.val
         else
           cssData.background.image = ""
 
@@ -270,6 +295,9 @@ setCSS = () ->
               getColor(webeleData.border[section].color) 
           else
             cssData.border[section] = ""
+
+        #rule
+        cssData.rule.important =  getVal webeleData.rule.important.val
 
         #radius
         if webeleData.borderRadius.topLeft.val != 0 or 

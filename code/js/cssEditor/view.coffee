@@ -141,25 +141,77 @@ getChanger = () ->
         ["div", {class: "headerArea"}]
         ["div", {class: "contentsArea"}]
         [
-          ["div", {}, "GlobalChash"]
+          ["table"]
           [
-            ["button", {id: "global_save", type: "button", href: "data:test.txt"}, "Save"]
-            ["button", {id: "global_clear", type: "button"}, "Clear"]
-          ]
-          ["div", {}, "PageChash"]
-          [
-            ["button", {id: "page_save", type: "button"}, "Save"]
-            ["button", {id: "page_clear", type: "button"}, "Clear"]
-          ]
-          ["div", {}, "File"]
-          [
-            ["input", {id: "loader", class:"displayNone" , type: "file"}]
-            ["button", {id: "saveAsFile", type: "button"}, "Save"]
-            ["button", {id: "loadFromFile", type: "button"}, "Load"]
-          ]
-          ["div", {}, "Code"]
-          [
-            ["button", {id: "generateCodes", type: "button"}, "GenerateCodes"]
+            ["tr"]
+            [
+              ["td", {}, "serverData:"]
+              ["td"]
+              [
+                ["button", {id: "saveAsFile", type: "button"}, "Save"]
+              ]
+              ["td"]
+              [
+                ["button", {id: "loadFromFile", type: "button"}, "Load"]
+              ]
+            ]
+            ["tr"]
+            [
+              ["td", {}, "commonData:"]
+              ["td"]
+              [
+                ["button", {id: "commonSave", type: "button"}, "Save"]
+              ]
+              ["td"]
+              [
+                ["button", {id: "commonLoad", type: "button"}, "Load"]
+              ]
+            ]
+            ["tr"]
+            [
+              ["td", {}, "pageChash:"]
+              ["td"]
+              [
+                ["button", {id: "page_save", type: "button"}, "Save"]
+              ]
+              ["td"]
+              [
+                ["button", {id: "page_clear", type: "button"}, "Clear"]
+              ]
+            ]
+            ["tr"]
+            [
+              ["td", {}, "globalChash:"]
+              ["td"]
+              [
+                ["button", {id: "global_save", type: "button", href: "data:test.txt"}, "Save"]
+              ]
+              ["td"]
+              [
+                ["button", {id: "global_clear", type: "button"}, "Clear"]
+              ]
+            ]
+            ["tr"]
+            [
+              ["td", {}, "code:"]
+              ["td"]
+              [
+                ["button", {id: "generateCodes", type: "button"}, "Generate"]
+              ]
+            ]
+            ["tr"]
+            [
+              ["td", {}, "backup:"]
+              ["td"]
+              [
+                ["button", {id: "saveBKFile", type: "button"}, "Save"]
+              ]
+              ["td"]
+              [
+                ["input", {id: "loader", class:"displayNone" , type: "file"}]
+                ["button", {id: "loadBKFile", type: "button"}, "Load"]
+              ]
+            ]
           ]
         ]
       ]

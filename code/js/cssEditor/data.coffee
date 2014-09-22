@@ -15,14 +15,17 @@ colorNameList.tone.unshift("")
 debug.data.imageList.unshift("")
 
 exports.responsiveMax = "small"
-exports.responsiveList = ["exSmall", "small", "middle" , "large"]
+# exports.responsiveList = ["exSmall", "small", "middle" , "large"]
+exports.responsiveList = ["exSmall", "small"]
 exports.animationState = ["start", "end"]
 
 ###
   通信
 ###
-io = socketIO.connect('http://localhost:1234');
-
+if isLocalTest
+  io = socketIO.connect('http://localhost:1234', {secure: true})
+else
+  io = socketIO.connect(global.serverURL)
 
 getColorGuiData = () ->
   {
@@ -366,6 +369,11 @@ exports.gui_css =
       for section in ["x", "y"]
         @origin[section] = 
           new web.gui.slider {}
+  rule:
+    init:() ->
+      @important = 
+        new web.gui.selectBox
+          option: ["", "true"]
 
 core.obj.allCall(@gui_css, {key:"init", arg:[]})
 core.obj.allDelete(@gui_css, "init")
@@ -425,10 +433,6 @@ core.obj.setMapVal(@optionData, [], @gui_option)
 #==============================================================================
 # pv method
 #==============================================================================
-getPageCookieName = () ->
-  strList = location.href.split("/")
-  strList[strList.length-1].split(".")[0] + @name
-  
 getJsonData = () =>
   {
     webele        : @webele
@@ -439,32 +443,40 @@ getJsonData = () =>
     responsiveMax : @responsiveMax  
   }
 
+setJSONData = (data) =>
+  fix = () =>
+    # core.obj.setMapVal(@gui_css, [["position"], ["left", "right", "bottom", "top"]], {name:"unitSlider"})
+    # core.obj.setMapVal(@gui_css, [["background"], ["image"]], {option:debug.data.imageList})
+    # core.obj.setMapVal(@gui_css, [["rule"], ["important"]], {option:""})
+    # delete @webele.middle
+    # delete @webele.large
+    console.log @webele
+    console.log "json fixed"
+
+  deleteExWebele = () =>
+    for key, resParam of @webele
+      for key, param of resParam
+        delete resParam[key] if @webeleList.indexOf(key) == -1
+
+  core.obj.marge(@gui_css, data.gui_css)
+  core.obj.marge(@gui_option, data.gui_option)
+  core.obj.marge(@webele, data.webele)
+  @HSL           = data.HSL
+  @optionData    = data.optionData
+  @responsiveMax = data.responsiveMax
+  deleteExWebele()
+  # fix()
+
 setLocalData = () =>
-  setJSONData = (data) =>
-    core.obj.marge(@gui_css, data.gui_css)
-    core.obj.marge(@gui_option, data.gui_option)
-    core.obj.marge(@webele, data.webele)
-    
-    core.obj.setMapVal(@gui_css, [["position"], ["left", "right", "bottom", "top"]], {name:"unitSlider"})
-    core.obj.setMapVal(@gui_css, [["background"], ["image"]], {option:debug.data.imageList})
-    #console.log @gui_css
-    @HSL           = data.HSL
-    @optionData    = data.optionData
-    @responsiveMax = data.responsiveMax
-    
-  jsonLoadEvent = (data) =>
-    console.log data
-    setJSONData(data)
-    ctr = require("./ctr")
-    ctr.init()
-  
-  if localStorage.getItem(getPageCookieName())
-    setJSONData(JSON.parse(localStorage.getItem(getPageCookieName())))
+  if localStorage.getItem(web.url.getPageName())
+    setJSONData(JSON.parse(localStorage.getItem(web.url.getPageName())))
+    alert "ページキャッシュをロードしました。"
   else if localStorage.getItem(@name)
     setJSONData(JSON.parse(localStorage.getItem(@name)))
+    alert "グローバルキャッシュをロードしました。"
   else
-    core.file.getJSONFile("./src/webCustomizer/" + getPageCookieName() + ".json", jsonLoadEvent)
-    
+    @loadFile()
+
 #==============================================================================
 # ex method
 #==============================================================================
@@ -475,16 +487,39 @@ exports.clearCookie_G = () ->
   localStorage.removeItem(@name)
 
 exports.setCookie = () ->
-  localStorage.setItem(getPageCookieName(), JSON.stringify(getJsonData()))
+  localStorage.setItem(web.url.getPageName() + @name, JSON.stringify(getJsonData()))
 
 exports.clearCookie = () ->
-  localStorage.removeItem(getPageCookieName())
+  localStorage.removeItem(web.url.getPageName() + @name)
 
-exports.saveAsFile = () ->
-  io.emit 'fs_write', {fileName:"../index.json" ,data:JSON.stringify(getJsonData())}
-  alert("save完了")
+exports.saveFile = () ->
+  io.emit 'fs_write', {fileName:"./webroot/public/css/cssEditor/" + web.url.getPageName() + ".json", data:JSON.stringify(getJsonData())}
+  alert("サーバデータを保存しました。")
 
-  # core.file.downloadData(JSON.stringify(getJsonData()), getPageCookieName() + ".json")
+exports.loadFile = () ->
+  io.emit 'fs_read', {fileName:"./webroot/public/css/cssEditor/" + web.url.getPageName() + ".json", id:"cssEditor_load"}
+
+exports.saveBKFile = () ->
+  core.file.downloadData(JSON.stringify(getJsonData()), @name + "_" + web.url.getPageName() + "_" + core.time.getNowTime() + ".json")
+
+exports.commonSave = () ->
+  io.emit 'fs_write', {fileName:"./webroot/public/css/cssEditor/common.json", data:JSON.stringify(getJsonData())}  
+
+exports.commonLoad = () ->
+  io.emit 'fs_read', {fileName:"./webroot/public/css/cssEditor/common.json", id:"cssEditor_load"}
+
+io.on('cssEditor_load_end', (loadData) =>
+  setJSONData(loadData)
+  ctr = require("./ctr")
+  ctr.init()
+)
+
+io.on('cssEditor_load_common_end', (loadData) =>
+  setJSONData(loadData)
+  ctr = require("./ctr")
+  ctr.init()
+)
+
 #==============================================================================
 # main
 #==============================================================================

@@ -1,8 +1,11 @@
+global.isLocalTest = true
+global.serverURL = "http://test1-sirolabo.rhcloud.com/"
+
 #==============================================================================
 # require
 #==============================================================================
-# require("./cssEditor")
-# require("event/com").init()
+require("cssEditor")
+require("event/com").init()
 # event_trans = require("event/trans")
 
 #==============================================================================

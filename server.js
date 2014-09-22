@@ -2,31 +2,20 @@
 /*
 	require
  */
-var app, io, path, r, server;
-
-r = {};
+var app, io, ip, path, port, r, server;
 
 require('node-monkey').start({
   host: "127.0.0.1",
   port: "50500"
 });
 
-r.express = require('express');
-
-r.logger = require('morgan');
-
-r.http = require("http");
-
-r.path = require("path");
-
-r.fs = require("fs");
-
-r.socketIO = require('socket.io');
-
-r.jade = require('jade');
-
-global.rootRequire = function(name) {
-  return require(__dirname + '/' + name);
+r = {
+  express: require('express'),
+  logger: require('morgan'),
+  http: require("http"),
+  path: require("path"),
+  fs: require("fs"),
+  socketIO: require('socket.io')
 };
 
 
@@ -73,9 +62,17 @@ app.use(function(err, req, res, next) {
 
 server = r.http.createServer(app);
 
-server.listen(app.get("port"), function() {
-  return console.log("Express server listening on port " + app.get("port"));
-});
+ip = process.env.OPENSHIFT_NODEJS_IP;
+
+port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+
+if (typeof ip === "undefined") {
+  server.listen(app.get("port"), function() {
+    return console.log("Express server listening on port " + app.get("port"));
+  });
+} else {
+  server.listen(port, ip);
+}
 
 io = r.socketIO.listen(server);
 
@@ -89,12 +86,13 @@ io.on('connection', function(socket) {
       return console.log(err);
     });
   });
-  return socket.on('fs_load', function(param) {
+  return socket.on('fs_read', function(param) {
     return r.fs.readFile(param.fileName, function(err, fileData) {
       if (err) {
-        console.log(err);
+        return console.log(err);
+      } else {
+        return io.sockets.emit(param.id + '_end', JSON.parse(fileData));
       }
-      return io.sockets.emit(param.id + '_end', JSON.parse(fileData));
     });
   });
 });
@@ -126,7 +124,7 @@ app.get('/*', function(req, res) {
       res.send(err);
       return res.send("404 file not found");
     } else {
-      return res.end(html);
+      return res.send(html);
     }
   });
 });

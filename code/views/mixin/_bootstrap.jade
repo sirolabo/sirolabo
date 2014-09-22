@@ -8,14 +8,14 @@ mixin bootstrap_nav(navID, linkList, xcolor, brandImg)
         span(class='icon-bar')
         span(class='icon-bar')
         span(class='icon-bar')
-      a(class='navbar-brand' href='index.html')
+      a(class='navbar-brand' href='index')
         img(src=brandImg data-webEle="brandImg")
     div(class='collapse navbar-collapse target')
       ul(id=navID + 'UL' class='nav navbar-nav navbar-right')
         for linkTemp, index in linkList
-          li
+          li(data-webEle="headerNavLink")
             a(href=linkTemp.link)
-              +icon("bootstrap", linkTemp.icon)
+              i(data-webEle="headerIcon" class='glyphicon glyphicon-' + linkTemp.icon)
               =linkTemp.name
               
 //-----------------------------------------------------------------------------
@@ -58,10 +58,10 @@ mixin bootstrap_accordionTop(id)
 mixin  bootstrap_accordion(title, index, icon)
   - icon = icon || "book"
   div(class="panel panel-default")
-    div(class="panel-heading")
+    div(data-webEle="accordion-head" class="panel-heading")
       h3(class="panel-title")
-        a(class="accordion-toggle" data-toggle="collapse" data-parent="#"+_bootstrap_accordion_ID href="#collapse" + index)
-          +icon("bootstrap", icon)
+        a(data-webEle="accordionTitle" class="accordion-toggle" data-toggle="collapse" data-parent="#"+_bootstrap_accordion_ID href="#collapse" + index)
+          i(data-webEle="accordionIcon" class='glyphicon glyphicon-' + icon)
           =title
           
     if index == 0
@@ -70,5 +70,5 @@ mixin  bootstrap_accordion(title, index, icon)
       - cls = "panel-collapse collapse"
       
     div(id="collapse" + index class=cls)
-      div(class="panel-body" data-webEle="text")
+      div(class="panel-body" data-webEle="accordion-body")
         block

@@ -18,7 +18,6 @@ exports.getColorList = (HSL) ->
   monoHSL["S"] = 0
   
   reverseMonoHSL = core.obj.clone(HSL)
-  console.log HSL
   reverseMonoHSL["S"] = 0
   reverseMonoHSL["L"] = 100 - HSL["L"]
   

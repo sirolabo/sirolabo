@@ -32,6 +32,9 @@ class prop
     @radius =
       init:(param) ->
         @radius = ""
+    @rule =
+      init:(param) ->
+        @important = ""
     @font =
       init:(param) ->
         @family = ""
@@ -148,6 +151,9 @@ class prop
     tagData["transform-origin"] = @transform.origin if @transform.origin
 
     if Object.keys(tagData).length != 0
+      if @rule.important
+        for key, param of tagData
+          tagData[key] = tagData[key] + " !important"
       css_core.make cssData
     else
       ""

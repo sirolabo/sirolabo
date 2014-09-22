@@ -1,0 +1,36 @@
+extends extends/_standard
+//-============================================================================
+//- header
+//-============================================================================
+block header
+  +bootstrap_nav("headerNav", nav.common, "headerNav", path.img + "common/logo.png")
+
+//-============================================================================
+//- footer
+//-============================================================================
+//-----------------------------------------------------------------------------
+//- main
+//-----------------------------------------------------------------------------
+block footer
+  .container
+    .row
+      .col-sm-9
+        .col-sm-3
+          +footerLink("Pages", nav.common)
+        .col-sm-3
+          +footerLink("Links", nav.common)
+                  
+      .col-sm-3
+        .footerButtonArea(data-webele="footer_buttonArea")
+          .socialArea(data-webele="footer_socialArea")
+            a(href="#" data-webele="footer_socialArea_Link")
+              +icon("fontAwesome", "twitter-square", "fa-2x")
+            a(href="#" data-webele="footer_socialArea_Link")
+              +icon("fontAwesome", "facebook-square", "fa-2x")
+            a(href="#" data-webele="footer_socialArea_Link")
+              +icon("fontAwesome", "tumblr-square", "fa-2x")
+          .backButtonArea(data-webele="footer_backButtonArea")
+            a(href="#")
+              +icon("fontAwesome", "arrow-circle-up", "fa-5x")
+
+  p#copyright(data-webele="copyright")=text.copyRight

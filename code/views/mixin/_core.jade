@@ -23,7 +23,7 @@ mixin makeHead(subtitle)
     link(rel='stylesheet' href=path.plugin + list)
     
   link(rel='stylesheet' href=path.css + "style.css")
-  link(rel='stylesheet' href=path.css + 'webcustomizer.css')
+  link(rel='stylesheet' href=path.css + 'dummy.css')
   
 //- jslink作成
 mixin makeJSLink()
@@ -43,10 +43,10 @@ mixin icon(type, name, addClass)
       ="illegal icon type:" + type
 
 mixin footerLink(name, linkList)
-  nav.footeLinkArea
+  nav.footeLinkArea(data-webele="footerLinkArea")
     h4.name=name
     for linkTemp, index in linkList
-      li
+      li(data-webele="footerLinkArea_link")
         a(href=linkTemp.link)
           =linkTemp.name
 
